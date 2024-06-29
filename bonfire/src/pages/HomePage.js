@@ -39,7 +39,6 @@ function HomePage() {
 				</div>
 					<div
 						style={{
-							// marginTop: '20px',
 							position: 'relative',
 							bottom: 0
 						}}
