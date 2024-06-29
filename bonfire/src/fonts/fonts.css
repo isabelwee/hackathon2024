@@ -4,3 +4,8 @@
     font-family: 'More-Sugar';
     src: local('More-Sugar'), url('MoreSugar-Regular.ttf') format('truetype');
 }
+
+@font-face {
+    font-family: 'Gaegu';
+    src: local('Gaegu'), url('Gaegu-Regular.ttf') format('trueType');
+}

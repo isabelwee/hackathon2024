@@ -1,11 +1,13 @@
 import React from "react";
 import Header from '../components/Header';
+import Background from '../components/Background';
 import AddBonfire from "../components/AddBonfire";
-import fire from "../images/fire.jpg"
-
+import Carousel from "../components/Carousel";
+import Bonfire from "../components/Bonfire";
 function HomePage() {
     return (
         <>
+        {/* <Background/> */}
         <Header/>
         <div
         style={{
@@ -13,21 +15,11 @@ function HomePage() {
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
-            flexDirection: 'column-reverse'
+            flexDirection: 'column'
         }}
         >
-            {/* <Header/> */}
-            <div className="bonfire">
-
-                <img src={fire}
-                style={{
-                    maxWidth: '400px',
-                    margin: '50px',
-                }}
-                ></img>
-
-            </div>
-            <div style={{ position: 'relative'}}>aeojihbo</div>
+            {/* <Bonfire/> */}
+            <Carousel/>
         </div>
         
     </>
