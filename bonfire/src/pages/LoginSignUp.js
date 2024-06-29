@@ -2,6 +2,7 @@ import React from "react";
 import '../App.css';
 import "../fonts/fonts.css";
 import LoginButton from "../components/LoginButton";
+import LoginCard from "../components/LoginCard";
 
 function LoginSignUp() {
   const containerStyle = {
@@ -25,6 +26,7 @@ function LoginSignUp() {
           bonfire
         </div>
         <LoginButton />
+        <LoginCard />
       </div>
 
   );
