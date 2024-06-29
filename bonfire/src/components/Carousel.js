@@ -6,8 +6,11 @@ import Bonfire from './Bonfire';
 import { IconButton } from '@mui/material';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
+import { useNavigate } from 'react-router-dom';
+
 
 function Carousel({handleNameChange}) {
+	const navigate = useNavigate();
 	const bonfires = [
 		'bodacious baddies',
 		'name2',
@@ -16,7 +19,6 @@ function Carousel({handleNameChange}) {
 		'name5',
 	]
 	const [index, setIndex] = useState(0);
-	const [name, setName] = useState('');
 
 	useEffect(() => {
 		handleNameChange(bonfires[index]);
@@ -24,6 +26,10 @@ function Carousel({handleNameChange}) {
 	
 	const handleSlideChange = (swiper) => {
 		setIndex(swiper.activeIndex)
+	}
+
+	const handleBucketList = () => {
+		navigate('/bucket-list');
 	}
 
   return (
@@ -52,10 +58,8 @@ function Carousel({handleNameChange}) {
 			<Swiper
 				effect='coverflow'
 				slidesPerView='3'
-				grabCursor='true'
+				grabCursor={false}
 				onSlideChange={handleSlideChange}
-				// loop='true'
-				// loopAddBlankSlides='true'
 				centerInsufficientSlides='true'
 				centeredSlides='true'
 				coverflowEffect={{
@@ -72,19 +76,19 @@ function Carousel({handleNameChange}) {
 				}}
 				modules={[EffectCoverflow, Navigation]}
 			>
-				<SwiperSlide>
+				<SwiperSlide onClick={handleBucketList} >
 					<Bonfire name='god'></Bonfire>
 				</SwiperSlide>
-				<SwiperSlide>
+				<SwiperSlide onClick={handleBucketList} >
 					<Bonfire name='has'></Bonfire>
 				</SwiperSlide>
-				<SwiperSlide>
+				<SwiperSlide onClick={handleBucketList} >
 					<Bonfire name='said'></Bonfire>
 				</SwiperSlide>
-				<SwiperSlide>
+				<SwiperSlide onClick={handleBucketList} >
 					<Bonfire name='hoes mad'></Bonfire>
 				</SwiperSlide>
-				<SwiperSlide>
+				<SwiperSlide onClick={handleBucketList} >
 					<Bonfire name='ya yeet'></Bonfire>
 				</SwiperSlide>
 
