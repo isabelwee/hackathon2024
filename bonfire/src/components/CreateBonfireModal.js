@@ -10,6 +10,7 @@ import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 import Snackbar from '@mui/material/Snackbar';
 import Alert from '@mui/material/Alert';
+import AddBonfire from './AddBonfire';
 
 const boxStyle = {
   padding: '10px',
@@ -47,20 +48,12 @@ const promptStyle = {
 }
 
 
-export default function BucketListModal() {
-  const [open, setOpen] = React.useState(false);
+export default function BucketListModal({ open, handleClose }) {
   const [number, setNumber] = React.useState('');
   const [numberFieldIsHovered, setNumberFieldIsHovered] = React.useState(false);
   const [textFieldIsHovered, setTextFieldIsHovered] = React.useState(false);
   const [doneButtonIsHovered, setDoneButtonIsHovered] = React.useState(false);
   const [snackbarOpen, setSnackbarOpen] = React.useState(false);
-
-  
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => {
-    setOpen(false)
-    setDoneButtonIsHovered(false)
-  };
 
   const handleNumberChange = (event) => {
     setNumber(event.target.value);
@@ -126,7 +119,8 @@ export default function BucketListModal() {
 
   return (
     <div>
-      <Button style={buttonStyle} onClick={handleOpen}>Replace with button icon</Button>  {/* // replace this */}
+      {/* <AddBonfire onClick={handleOpen} /> */}
+      {/* <Button style={buttonStyle} onClick={handleOpen}>Replace with button icon</Button>  // replace this */}
       <Modal
         open={open}
         onClose={handleClose}
@@ -223,6 +217,7 @@ export default function BucketListModal() {
             disableElevation
             onMouseEnter={() => setDoneButtonIsHovered(true)} // Set hover state to true on mouse enter
             onMouseLeave={() => setDoneButtonIsHovered(false)}
+            sx={{ cursor: 'pointer'}}
           >
             Done
           </Button>

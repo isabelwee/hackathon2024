@@ -1,24 +1,26 @@
 import React from "react";
-// import IconButton from '@mui/material/IconButton';
-// import PersonIcon from '@mui/icons-material/Person';
-import Button from "@mui/material/Button";
+import IconButton from "@mui/material/IconButton";
+import newFire from '../images/addBonfireButton.png'
 
-
-export default function AddBonfire() {
+export default function AddBonfire(props) {
 
   return (
     <div>
 
-      <Button 
-      sx={{
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center'
-      }}
+      <IconButton 
+        sx={{
+          position: 'absolute',
+          right: 0,
+          bottom: 0,
+          zIndex: 9999,
+          m: 3,
+          cursor: 'pointer',
+        }}
+      onClick={props.onClick}
       variant='contained'
       >
-        yes
-      </Button>
+        <img src={newFire}/>
+      </IconButton>
     </div>
 
   );
