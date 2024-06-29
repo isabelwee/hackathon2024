@@ -165,7 +165,7 @@ function BucketList() {
               </Stack>
             ))}
             <Stack direction="row" alignItems="center" spacing={1}>
-              <Typography variant="h4" sx={typographyStyle} onClick={handleBucketListModalOpen}>+ Add new bucket list item!</Typography>
+              <Typography variant="h4" sx={{...typographyStyle, cursor: 'pointer', '&:hover': {fontWeight: 'bold'}}} onClick={handleBucketListModalOpen}>+ Add new bucket list item!</Typography>
             </Stack>
           </Stack>
         </Stack>
