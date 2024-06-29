@@ -1,14 +1,14 @@
 import React from "react";
 import Header from '../components/Header';
-import Background from '../components/Background';
+// import Background from '../components/Background';
 
 function HomePage() {
     return (
         <div>
-            <Background />
+            {/* <Background /> */}
             <Header />
         </div>
     );
 }
 
-export default HomePage
+export default HomePage;

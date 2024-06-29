@@ -9,3 +9,8 @@
     font-family: 'Gaegu';
     src: local('Gaegu'), url('Gaegu-Regular.ttf') format('trueType');
 }
+
+@font-face {
+    font-family: 'Gaegu-Bold';
+    src: local('Gaegu-Bold'), url('Gaegu-Bold.ttf') format('trueType');
+}

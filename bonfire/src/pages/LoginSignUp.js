@@ -2,7 +2,11 @@ import React from "react";
 import '../App.css';
 import "../fonts/fonts.css";
 import LoginButton from "../components/LoginButton";
+<<<<<<< HEAD
 import LoginCard from "../components/LoginCard";
+=======
+import SignUpButton from "../components/SignUpButton"
+>>>>>>> main
 
 function LoginSignUp() {
   const containerStyle = {
@@ -11,11 +15,12 @@ function LoginSignUp() {
     justifyContent: 'center',
     alignItems: 'center',
     height: '100vh',
+    backgroundSize: 'cover',
   };
 
   const titleStyle = {
     fontFamily: 'More Sugar',
-    fontSize: '70px',
+    fontSize: '100px',
     fontWeight: 'bold',
     color: '#F1B150',
   };
@@ -26,7 +31,11 @@ function LoginSignUp() {
           bonfire
         </div>
         <LoginButton />
+<<<<<<< HEAD
         <LoginCard />
+=======
+        <SignUpButton />
+>>>>>>> main
       </div>
 
   );
