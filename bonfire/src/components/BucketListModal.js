@@ -93,6 +93,7 @@ export default function BucketListModal() {
     borderRadius: '10px',
     border: doneButtonIsHovered ? '5px solid #F1B150' : 'none',
     backgroundColor: doneButtonIsHovered ? '#FFF1E1' : '#F1B150',
+    cursor:  'pointer'
   }
   
 
@@ -128,7 +129,7 @@ export default function BucketListModal() {
         <Box sx={style}>
           <IconButton
             aria-label='close'
-            style={{ position: 'absolute', top: '20px', right: '20px'}}
+            style={{ position: 'absolute', top: '20px', right: '20px', cursor: 'pointer'}}
             onClick={handleClose}
           >
             <CloseIcon />
