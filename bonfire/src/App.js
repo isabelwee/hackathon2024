@@ -19,7 +19,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/signup" element={<LoginSignUp />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/bucketList" element={<BucketList />} />
+          <Route path="/bucket-list" element={<BucketList />} />
           <Route path="/bucket-memory" element={<BucketMemories />} />
           <Route path="/dummy" element={<Dummy />} />
           <Route path="/profile" element={<Profile />} />

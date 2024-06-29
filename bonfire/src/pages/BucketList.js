@@ -1,13 +1,34 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Header from '../components/Header';
 import Typography from '@mui/material/Typography';
 import { Stack, Box, Checkbox, Button } from '@mui/material';
 import paper from '../images/paper.png';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-
 import { Link } from 'react-router-dom';
+import BucketListModal from '../components/BucketListModal';
 
 function BucketList() {
+  const [open, setOpen] = useState(false);
+  const [bucketListItems, setBucketListItems] = useState([
+    { text: 'Beach day!', checked: false },
+    { text: 'Pottery class', checked: false },
+    { text: 'Study date', checked: false },
+  ]);
+
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
+  const handleAddItem = (itemText) => {
+    setBucketListItems([...bucketListItems, { text: itemText, checked: false }]);
+    handleClose();
+  };
+
+  const handleCheckboxChange = (index) => (event) => {
+    const newBucketListItems = [...bucketListItems];
+    newBucketListItems[index].checked = event.target.checked;
+    setBucketListItems(newBucketListItems);
+  };
+
   const bodyStyle = {
     display: 'flex',
     justifyContent: 'center',
@@ -46,7 +67,7 @@ function BucketList() {
       color: '#F1B150',  // Set the checkbox color when checked
     },
     '&.Mui-disabled': {
-      color: 'grey',  opacity: 0.5
+      color: 'grey', opacity: 0.5,
     },
   };
 
@@ -69,7 +90,7 @@ function BucketList() {
           variant="text"
           endIcon={<ArrowForwardIosIcon />}
           size="medium"
-          component={Link} to="/bucket-memory" 
+          component={Link} to="/bucket-memory"
         >
           Memories
         </Button>
@@ -87,28 +108,26 @@ function BucketList() {
             Blah's Bucket List
           </Typography>
 
-          {/* THE DIFFERENT EXAMPLE BUCKET LIST ITEMS! */}
           <Stack spacing={2}>
+            {bucketListItems.map((item, index) => (
+              <Stack key={index} direction="row" alignItems="center" spacing={1}>
+                <Checkbox
+                  sx={checkboxStyle}
+                  size="large"
+                  checked={item.checked}
+                  onChange={handleCheckboxChange(index)}
+                />
+                <Typography variant="h4" sx={typographyStyle}>{item.text}</Typography>
+              </Stack>
+            ))}
             <Stack direction="row" alignItems="center" spacing={1}>
-              <Checkbox sx={checkboxStyle} size="large" />
-              <Typography variant="h4" sx={typographyStyle}>Beach day!</Typography>
-            </Stack>
-            <Stack direction="row" alignItems="center" spacing={1}>
-              <Checkbox sx={checkboxStyle} size="large" />
-              <Typography variant="h4" sx={typographyStyle}>Pottery class</Typography>
-            </Stack>
-            <Stack direction="row" alignItems="center" spacing={1}>
-              <Checkbox sx={checkboxStyle} size="large" />
-              <Typography variant="h4" sx={typographyStyle}>Study date</Typography>
-            </Stack>
-            <Stack direction="row" alignItems="center" spacing={1}>
-              <Checkbox sx={checkboxStyle} size="large" colour="black" disabled checked />
-              <Typography variant="h4" sx={typographyStyle}>Add new bucket list item!</Typography>
+              {/* <Checkbox sx={checkboxStyle} size="large" /> */}
+              <Typography variant="h4" sx={typographyStyle} onClick={handleOpen}>+ Add new bucket list item!</Typography>
             </Stack>
           </Stack>
-
         </Stack>
       </Box>
+      <BucketListModal open={open} handleClose={handleClose} handleAddItem={handleAddItem} />
     </div>
   );
 }
