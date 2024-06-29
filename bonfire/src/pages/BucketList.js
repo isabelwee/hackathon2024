@@ -122,7 +122,7 @@ function BucketList() {
             ))}
             <Stack direction="row" alignItems="center" spacing={1}>
               {/* <Checkbox sx={checkboxStyle} size="large" /> */}
-              <Typography variant="h4" sx={typographyStyle} onClick={handleOpen}>+ Add new bucket list item!</Typography>
+              <Typography variant="h4" sx={{...typographyStyle, cursor: 'pointer'}} onClick={handleOpen}>+ Add new bucket list item!</Typography>
             </Stack>
           </Stack>
         </Stack>
