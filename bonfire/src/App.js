@@ -5,6 +5,7 @@ import HomePage from './pages/HomePage';
 import LoginSignUp from './pages/LoginSignUp';
 import Login from './pages/Login';
 import BucketList from './pages/BucketList';
+import Profile from './pages/Profile';
 import Layout from './components/Layout';
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
           <Route path="/signup" element={<LoginSignUp />} />
           <Route path="/login" element={<Login />} />
           <Route path="/bucketList" element={<BucketList />} />
+          <Route path="/profile" element={<Profile />} />
           {/* <Route path="/space" element={<HomePage />} /> */}
         </Routes>
       </Layout>

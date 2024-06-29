@@ -3,7 +3,7 @@ import "../fonts/fonts.css";
 import Button from '@mui/material/Button';
 import { useNavigate } from 'react-router-dom';
 
-function WelcomeButton() {
+function LogOutButton() {
   const navigate = useNavigate();
 
   const buttonStyle = {
@@ -19,7 +19,7 @@ function WelcomeButton() {
 
   const handleClick = () => {
     /* change this!!! */
-    navigate('/')
+    navigate('/signup')
   }
 
   return (
@@ -33,14 +33,14 @@ function WelcomeButton() {
       },
       transition: 'all 0.1s ease',
       padding: '1em',
-    }}
+    }} 
       variant="contained" 
       color="primary" 
       style={buttonStyle} disableElevation
       onClick={handleClick}>
-      Welcome back
+      Log out
     </Button>
   );
 }
 
-export default WelcomeButton;
+export default LogOutButton;

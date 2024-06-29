@@ -5,16 +5,16 @@ import CardContent from '@mui/material/CardContent';
 import Typography from "@mui/material/Typography";
 import TextField from '@mui/material/TextField';
 import { useNavigate } from 'react-router-dom';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 
-
-function LoginCard() {
+function ProfileCard() {
     const navigate = useNavigate();
 
   const cardStyle = {
     backgroundColor: '#FFF1E1',
     width: '34vw',
-    height: '40vh',
+    height: '54vh',
     textAlign: 'center',
     padding: '1em'
 }
@@ -34,21 +34,6 @@ const fieldStyle = {
     marginTop: '.7em'
 }
 
-const helpStyle = {
-    textAlign: 'left',
-    fontFamily: 'Gaegu',
-    color: '#7A5895',
-    fontSize: '20px',
-    marginTop: '.5em'
-}
-
-const accStyle = {
-    textAlign: 'left',
-    fontFamily: 'Gaegu',
-    color: '#7A5895',
-    fontSize: '20px',
-}
-
 const padding = {
     marginBottom: '.4em'
 }
@@ -62,24 +47,35 @@ const handleClick = () => {
 
     <Card style={cardStyle} sx={{ borderRadius: 4, padding: 2 }}>
         <CardContent>
-            <Typography style={headerStyle}>
-                Log into your account
-            </Typography>
+            <AccountCircleIcon 
+            sx={{ fontSize: 160, color: '#394B6E', alignItems: 'center', marginTop: -.5 }} 
+            />
             <div style={fieldStyle}>
-                email:
-                <div style={padding}> </div>
+                name:
                 <div>
                     <TextField
                     fullWidth
                     required
                     id="outlined-required"
                     size="small"
+                    defaultValue="bob"
+                    />
+                </div>
+            </div>
+            <div style={fieldStyle}>
+                email:
+                <div>
+                    <TextField
+                    fullWidth
+                    required
+                    id="outlined-required"
+                    size="small"
+                    defaultValue="bob@mail.com"
                     />
                 </div>
             </div>
             <div style={fieldStyle}>
                 password: 
-                <div style={padding}> </div>
                 <div>
                     <TextField
                     fullWidth
@@ -87,14 +83,10 @@ const handleClick = () => {
                     type="password"
                     autoComplete="current-password"
                     size="small"
+                    defaultValue="bobspassword"
                     />
                 </div>
-                <Typography style={helpStyle} sx={{textDecoration: 'underline', cursor: 'pointer'}} >
-                    forgot your password? 
-                </Typography>
-                <Typography style={accStyle} sx={{textDecoration: 'underline', cursor: 'pointer'}} onClick={handleClick}>
-                    make an account
-                </Typography>
+                <div style={padding}> </div>
             </div>
 
         </CardContent>
@@ -105,4 +97,4 @@ const handleClick = () => {
   );
 }
 
-export default LoginCard;
+export default ProfileCard;
