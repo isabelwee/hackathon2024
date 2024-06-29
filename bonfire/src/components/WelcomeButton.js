@@ -19,7 +19,7 @@ function WelcomeButton() {
 
   const handleClick = () => {
     /* change this!!! */
-    navigate('/')
+    navigate('/home')
   }
 
   return (

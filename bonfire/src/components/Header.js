@@ -18,8 +18,7 @@ export default function Header() {
       }
 
       const handleHomeClick = () => {
-        /* change this!!! */
-        navigate('/')
+        navigate('/home')
       }
 
     return (
@@ -34,18 +33,19 @@ export default function Header() {
         >
             <Toolbar>
                 <HomeIcon 
-                sx={{ fontSize: 50, color: '#FFF1E1', alignItems: 'center', marginTop: -1 }} 
+                sx={{ fontSize: 50, color: '#FFF1E1', alignItems: 'center', marginTop: -1, cursor: 'pointer' }} 
                 onClick={handleHomeClick} />
                 <Typography
                     variant="h2"
                     // to="/"
-                    sx={{ flexGrow: 1, textAlign: 'center', fontFamily: 'More Sugar', color: '#F1B150' }}
+                    sx={{ flexGrow: 1, textAlign: 'center', fontFamily: 'More Sugar', color: '#F1B150', cursor: 'pointer'}}
                     onClick={handleHomeClick}
+                    
                 >
                     bonfire
                 </Typography>
                 <AccountCircleIcon 
-                 sx={{ fontSize: 50, color: '#FFF1E1', alignItems: 'center', marginTop: -1 }} 
+                 sx={{ fontSize: 50, color: '#FFF1E1', alignItems: 'center', marginTop: -1, cursor: 'pointer'}} 
                  onClick={handleProfileClick} />
             </Toolbar>
         </AppBar>
