@@ -1,10 +1,10 @@
 import React from 'react';
 import "../fonts/fonts.css";
 import Button from '@mui/material/Button';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function LoginButton() {
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const buttonStyle = {
     textTransform: 'lowercase',
@@ -17,8 +17,9 @@ function LoginButton() {
     margin: '6px'
   }
 
-  const handleClick = {
-    
+  const handleClick = () => {
+    /* change this!!! */
+    navigate('/')
   }
 
   return (
@@ -32,7 +33,8 @@ function LoginButton() {
       }} 
       variant="contained" 
       color="primary" 
-      style={buttonStyle} disableElevation>
+      style={buttonStyle} disableElevation
+      onClick={handleClick}>
       Login
     </Button>
   );
