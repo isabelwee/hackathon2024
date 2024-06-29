@@ -7,7 +7,7 @@ function LoginButton() {
   const navigate = useNavigate();
 
   const buttonStyle = {
-    textTransform: 'lowercase',
+    textTransform: 'none',
     backgroundColor: '#FFF1E1',
     color: '#7A5895',
     fontFamily: 'Gaegu-Bold',
