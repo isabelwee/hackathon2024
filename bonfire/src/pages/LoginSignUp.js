@@ -3,7 +3,6 @@ import '../App.css';
 import "../fonts/fonts.css";
 import LoginButton from "../components/LoginButton";
 import SignUpButton from "../components/SignUpButton"
-import background from "../images/background-no-mountains.png"
 
 function LoginSignUp() {
   const containerStyle = {
@@ -12,7 +11,6 @@ function LoginSignUp() {
     justifyContent: 'center',
     alignItems: 'center',
     height: '100vh',
-    backgroundImage: `url(${background})`,
     backgroundSize: 'cover',
   };
 
