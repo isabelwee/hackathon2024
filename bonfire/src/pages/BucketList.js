@@ -6,10 +6,13 @@ import paper from '../images/paper.png';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { Link } from 'react-router-dom';
 import BucketListModal from '../components/BucketListModal';
+import UploadPhotoModal from '../components/UploadImagesModal';  // Import the UploadPhotoModal
 import DeleteIcon from '@mui/icons-material/Delete'; // Import the Delete icon
 
 function BucketList() {
-  const [open, setOpen] = useState(false);
+  const [bucketListModalOpen, setBucketListModalOpen] = useState(false);
+  const [uploadPhotoModalOpen, setUploadPhotoModalOpen] = useState(false);  // State for the UploadPhotoModal
+  const [selectedItem, setSelectedItem] = useState(null); // State for the selected item
 
   // Initialize state with data from localStorage, if available
   const [bucketListItems, setBucketListItems] = useState(() => {
@@ -26,18 +29,26 @@ function BucketList() {
     localStorage.setItem('bucketListItems', JSON.stringify(bucketListItems));
   }, [bucketListItems]);
 
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+  const handleBucketListModalOpen = () => setBucketListModalOpen(true);
+  const handleBucketListModalClose = () => setBucketListModalOpen(false);
+
+  const handleUploadPhotoOpen = () => setUploadPhotoModalOpen(true);
+  const handleUploadPhotoClose = () => setUploadPhotoModalOpen(false);
 
   const handleAddItem = (itemText, itemDate) => {
     setBucketListItems([...bucketListItems, { text: itemText, date: itemDate, checked: false }]);
-    handleClose();
+    handleBucketListModalClose();
   };
 
   const handleCheckboxChange = (index) => (event) => {
     const newBucketListItems = [...bucketListItems];
     newBucketListItems[index].checked = event.target.checked;
     setBucketListItems(newBucketListItems);
+    
+    if (event.target.checked) {
+      setSelectedItem(newBucketListItems[index]);  // Set the selected item
+      handleUploadPhotoOpen();  // Open the UploadPhotoModal
+    }
   };
 
   const handleDeleteItem = (index) => () => {
@@ -154,12 +165,21 @@ function BucketList() {
               </Stack>
             ))}
             <Stack direction="row" alignItems="center" spacing={1}>
-              <Typography variant="h4" sx={typographyStyle} onClick={handleOpen}>+ Add new bucket list item!</Typography>
+              <Typography variant="h4" sx={typographyStyle} onClick={handleBucketListModalOpen}>+ Add new bucket list item!</Typography>
             </Stack>
           </Stack>
         </Stack>
       </Box>
-      <BucketListModal open={open} handleClose={handleClose} handleAddItem={handleAddItem} />
+      <BucketListModal 
+        open={bucketListModalOpen} 
+        handleClose={handleBucketListModalClose} 
+        handleAddItem={handleAddItem} 
+      />
+      <UploadPhotoModal
+        open={uploadPhotoModalOpen}
+        handleClose={handleUploadPhotoClose}
+        selectedItem={selectedItem}  // Pass the selected item
+      />
     </div>
   );
 }
