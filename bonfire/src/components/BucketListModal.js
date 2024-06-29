@@ -22,12 +22,6 @@ const style = {
   borderRadius: '25px',
 };
 
-// const buttonStyle = {
-//   textTransform: 'none',
-//   fontFamily: 'Gaegu',
-//   color: '#394B6E',
-// };
-
 const boxTitle = {
   fontFamily: 'More Sugar',
   fontSize: '40px',
@@ -54,7 +48,7 @@ export default function BucketListModal({ open, handleClose, handleAddItem }) {
   };
 
   const handleDoneClick = () => {
-    handleAddItem(inputText);
+    handleAddItem(inputText, date);
     setInputText('');
     setDate('');
   };
@@ -64,7 +58,7 @@ export default function BucketListModal({ open, handleClose, handleAddItem }) {
     height: '60px',
     backgroundColor: textFieldIsHovered ? '#EDDFCF' : '#CACACA',
     borderRadius: '10px',
-    transition: 'background-color 0.15s', // Smooth transition for border color change
+    transition: 'background-color 0.15s',
   };
 
   const dateFieldStyle = {
@@ -72,7 +66,7 @@ export default function BucketListModal({ open, handleClose, handleAddItem }) {
     height: '60px',
     borderRadius: '10px',
     backgroundColor: dateFieldIsHovered ? '#EDDFCF' : '#CACACA',
-    transition: 'border-color 0.15s', // Smooth transition for border color change
+    transition: 'border-color 0.15s',
   };
 
   const doneButtonStyle = {

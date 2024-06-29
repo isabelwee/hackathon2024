@@ -89,10 +89,22 @@ const handleClick = () => {
                     size="small"
                     />
                 </div>
-                <Typography style={helpStyle} sx={{textDecoration: 'underline', cursor: 'pointer'}} >
+                <Typography style={helpStyle} sx={{
+                    textDecoration: 'underline', 
+                    cursor: 'pointer', 
+                    '&:hover': {
+                        fontWeight: 'bold',
+                    }
+                }} >
                     forgot your password? 
                 </Typography>
-                <Typography style={accStyle} sx={{textDecoration: 'underline', cursor: 'pointer'}} onClick={handleClick}>
+                <Typography style={accStyle} sx={{
+                    textDecoration: 'underline', 
+                    cursor: 'pointer', 
+                    '&:hover': {
+                        fontWeight: 'bold',
+                    }
+                }} onClick={handleClick}>
                     make an account
                 </Typography>
             </div>

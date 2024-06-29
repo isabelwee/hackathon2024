@@ -1,25 +1,36 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from '../components/Header';
 import Typography from '@mui/material/Typography';
-import { Stack, Box, Checkbox, Button } from '@mui/material';
+import { Stack, Box, Checkbox, Button, IconButton } from '@mui/material';
 import paper from '../images/paper.png';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { Link } from 'react-router-dom';
 import BucketListModal from '../components/BucketListModal';
+import DeleteIcon from '@mui/icons-material/Delete'; // Import the Delete icon
 
 function BucketList() {
   const [open, setOpen] = useState(false);
-  const [bucketListItems, setBucketListItems] = useState([
-    { text: 'Beach day!', checked: false },
-    { text: 'Pottery class', checked: false },
-    { text: 'Study date', checked: false },
-  ]);
+
+  // Initialize state with data from localStorage, if available
+  const [bucketListItems, setBucketListItems] = useState(() => {
+    const savedItems = localStorage.getItem('bucketListItems');
+    return savedItems ? JSON.parse(savedItems) : [
+      { text: 'Beach day!', date: '2024-07-01', checked: false },
+      { text: 'Pottery class', date: '2024-07-02', checked: false },
+      { text: 'Study date', date: '2024-07-03', checked: false },
+    ];
+  });
+
+  // Update localStorage whenever bucketListItems changes
+  useEffect(() => {
+    localStorage.setItem('bucketListItems', JSON.stringify(bucketListItems));
+  }, [bucketListItems]);
 
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
-  const handleAddItem = (itemText) => {
-    setBucketListItems([...bucketListItems, { text: itemText, checked: false }]);
+  const handleAddItem = (itemText, itemDate) => {
+    setBucketListItems([...bucketListItems, { text: itemText, date: itemDate, checked: false }]);
     handleClose();
   };
 
@@ -27,6 +38,16 @@ function BucketList() {
     const newBucketListItems = [...bucketListItems];
     newBucketListItems[index].checked = event.target.checked;
     setBucketListItems(newBucketListItems);
+  };
+
+  const handleDeleteItem = (index) => () => {
+    const newBucketListItems = bucketListItems.filter((_, i) => i !== index);
+    setBucketListItems(newBucketListItems);
+  };
+
+  const handleClearAll = () => {
+    localStorage.removeItem('bucketListItems');
+    setBucketListItems([]);
   };
 
   const bodyStyle = {
@@ -117,12 +138,25 @@ function BucketList() {
                   checked={item.checked}
                   onChange={handleCheckboxChange(index)}
                 />
-                <Typography variant="h4" sx={typographyStyle}>{item.text}</Typography>
+                <Stack direction="column" spacing={0.5}>
+                  <Typography variant="h4" sx={typographyStyle}>{item.text}</Typography>
+                  {item.date && (
+                    <Typography variant="body1" sx={{ fontFamily: 'Gaegu', color: '#394B6E' }}>{item.date}</Typography>
+                  )}
+                </Stack>
+                <IconButton
+                  aria-label="delete"
+                  onClick={handleDeleteItem(index)}
+                  sx={{ marginLeft: 'auto' }}
+                >
+                  <DeleteIcon color="black" />
+                </IconButton>
               </Stack>
             ))}
             <Stack direction="row" alignItems="center" spacing={1}>
-              {/* <Checkbox sx={checkboxStyle} size="large" /> */}
-              <Typography variant="h4" sx={{...typographyStyle, cursor: 'pointer'}} onClick={handleOpen}>+ Add new bucket list item!</Typography>
+              <Typography variant="h4" sx={{...typographyStyle, cursor: 'pointer', '&:hover': {fontWeight: 'bold'}}} onClick={handleOpen}>
+                + Add new bucket list item!
+              </Typography>
             </Stack>
           </Stack>
         </Stack>
