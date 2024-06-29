@@ -19,7 +19,7 @@ function LogOutButton() {
 
   const handleClick = () => {
     /* change this!!! */
-    navigate('/signup')
+    navigate('/')
   }
 
   return (

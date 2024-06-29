@@ -33,7 +33,7 @@ export default function Header() {
         >
             <Toolbar>
                 <HomeIcon 
-                sx={{ fontSize: 50, color: '#FFF1E1', alignItems: 'center', marginTop: -1 }} 
+                sx={{ fontSize: 50, color: '#FFF1E1', alignItems: 'center', marginTop: -1, cursor: 'pointer' }} 
                 onClick={handleHomeClick} />
                 <Typography
                     variant="h2"
@@ -45,7 +45,7 @@ export default function Header() {
                     bonfire
                 </Typography>
                 <AccountCircleIcon 
-                 sx={{ fontSize: 50, color: '#FFF1E1', alignItems: 'center', marginTop: -1 }} 
+                 sx={{ fontSize: 50, color: '#FFF1E1', alignItems: 'center', marginTop: -1, cursor: 'pointer'}} 
                  onClick={handleProfileClick} />
             </Toolbar>
         </AppBar>
