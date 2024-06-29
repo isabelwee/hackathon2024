@@ -1,8 +1,17 @@
 import React from "react";
 
 function HomePage() {
+    const titleStyle = {
+        fontFamily: 'MoreSugar, Arial, sans-serif',
+        fontSize: '16px',
+        fontWeight: 'bold',
+        color: '#333',
+    };
+
     return (
-        <div>hOME eherhe</div>
+        <>
+            <div className="" style={titleStyle}>HELLO</div>
+        </>
     );
 }
 
