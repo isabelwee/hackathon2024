@@ -2,8 +2,8 @@ import React from 'react';
 import Box from '@mui/material/Box';
 import bg from '../images/background.png';
 
-function Background() {
-  return (
+const Layout = ({ children }) => (
+  <>
     <Box
       sx={{
         backgroundImage: `url(${bg})`,
@@ -18,7 +18,10 @@ function Background() {
         overflow: 'hidden',
       }}
     />
-  );
-}
+    <div style={{ position: 'relative', zIndex: 1 }}>
+      {children}
+    </div>
+  </>
+);
 
-export default Background;
+export default Layout;
