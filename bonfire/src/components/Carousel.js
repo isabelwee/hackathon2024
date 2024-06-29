@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectCoverflow, Navigation } from 'swiper/modules';
 import 'swiper/css';
@@ -7,8 +7,24 @@ import { IconButton } from '@mui/material';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 
-function Carousel() {
+function Carousel({handleNameChange}) {
+	const bonfires = [
+		'bodacious baddies',
+		'name2',
+		'name3',
+		'name4',
+		'name5',
+	]
+	const [index, setIndex] = useState(0);
+	const [name, setName] = useState('');
 
+	useEffect(() => {
+		handleNameChange(bonfires[index]);
+	}, [index])
+	
+	const handleSlideChange = (swiper) => {
+		setIndex(swiper.activeIndex)
+	}
 
   return (
 		<div className='Carousel-container'
@@ -37,6 +53,7 @@ function Carousel() {
 				effect='coverflow'
 				slidesPerView='3'
 				grabCursor='true'
+				onSlideChange={handleSlideChange}
 				// loop='true'
 				// loopAddBlankSlides='true'
 				centerInsufficientSlides='true'
@@ -44,7 +61,7 @@ function Carousel() {
 				coverflowEffect={{
 					rotate: 0,
 					scale: 1,
-					stretch: -38,
+					stretch: -50,
 					depth: 150,
 					modifier: 4,
 					slideShadows: false

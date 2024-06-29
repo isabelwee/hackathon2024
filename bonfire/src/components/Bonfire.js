@@ -12,7 +12,7 @@ export default function Bonfire (props) {
 		}}>
 			<img src={fire}
 				style={{
-					minWidth: '500px',
+					minWidth: '400px',
 					width: '100%',
 					objectFit: 'cover'
 				}}
