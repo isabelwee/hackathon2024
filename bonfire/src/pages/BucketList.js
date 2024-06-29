@@ -14,7 +14,7 @@ function BucketList() {
     padding: '20px',
     boxSizing: 'border-box',
     textAlign: 'center',
-    background: 'transparent', // Semi-transparent background for readability
+    background: 'transparent',
     borderRadius: '8px',
   };
 
