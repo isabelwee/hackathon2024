@@ -1,11 +1,11 @@
 import React from "react";
 import '../App.css';
 import "../fonts/fonts.css";
-import LoginButton from "../components/LoginButton";
-import LoginCard from "../components/LoginCard";
-import SignUpButton from "../components/SignUpButton"
+import LogOutButton from "../components/LogOutButton";
+import ProfileCard from "../components/ProfileCard";
+import Header from '../components/Header';
 
-function LoginSignUp() {
+function Profile() {
   const containerStyle = {
     display: 'flex',
     flexDirection: 'column',
@@ -24,14 +24,16 @@ function LoginSignUp() {
 
   return (
       < div style={containerStyle}>
-        <div className="bonfire-title" style={titleStyle}>
+        {/* <div className="bonfire-title" style={titleStyle}>
           bonfire
+        </div> */}
+        <Header />
+        <ProfileCard/>
+        <br></br>
+        <LogOutButton/>
         </div>
-        <LoginButton />
-        <SignUpButton />
-      </div>
 
   );
 }
 
-export default LoginSignUp
+export default Profile

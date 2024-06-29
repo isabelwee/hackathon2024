@@ -1,9 +1,8 @@
 import React from "react";
 import '../App.css';
 import "../fonts/fonts.css";
-import LoginButton from "../components/LoginButton";
+import WelcomeButton from "../components/WelcomeButton";
 import LoginCard from "../components/LoginCard";
-import SignUpButton from "../components/SignUpButton"
 
 function LoginSignUp() {
   const containerStyle = {
@@ -27,9 +26,10 @@ function LoginSignUp() {
         <div className="bonfire-title" style={titleStyle}>
           bonfire
         </div>
-        <LoginButton />
-        <SignUpButton />
-      </div>
+        <LoginCard />
+        <br></br>
+        <WelcomeButton />      
+        </div>
 
   );
 }
