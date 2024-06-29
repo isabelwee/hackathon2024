@@ -36,8 +36,3 @@
     transform: rotate(360deg);
   }
 }
-
-@font-face {
-  font-family: 'MoreSugar';
-  src: url('./fonts/more-sugar.regular.ttf') format('truetype');
-}
