@@ -8,8 +8,6 @@ import BucketList from './pages/BucketList';
 import Profile from './pages/Profile';
 import Layout from './components/Layout';
 
-import Dummy from './pages/Dummy';
-
 function App() {
   return (
     <BrowserRouter>
@@ -19,7 +17,6 @@ function App() {
           <Route path="/signup" element={<LoginSignUp />} />
           <Route path="/login" element={<Login />} />
           <Route path="/bucketList" element={<BucketList />} />
-          <Route path="/dummy" element={<Dummy />} />
           <Route path="/profile" element={<Profile />} />
           {/* <Route path="/space" element={<HomePage />} /> */}
         </Routes>
