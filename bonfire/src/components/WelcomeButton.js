@@ -3,12 +3,12 @@ import "../fonts/fonts.css";
 import Button from '@mui/material/Button';
 import { useNavigate } from 'react-router-dom';
 
-function LoginButton() {
+function WelcomeButton() {
   const navigate = useNavigate();
 
   const buttonStyle = {
     textTransform: 'lowercase',
-    backgroundColor: '#FFF1E1',
+    backgroundColor: '#F1B150',
     color: '#7A5895',
     fontFamily: 'Gaegu-Bold',
     width: '344px',
@@ -19,7 +19,7 @@ function LoginButton() {
 
   const handleClick = () => {
     /* change this!!! */
-    navigate('/login')
+    navigate('/')
   }
 
   return (
@@ -29,15 +29,16 @@ function LoginButton() {
         '&:hover': {
           border: '5px solid #7A5895', // Border color and size on hover
         },
-        transition: 'all 0.1s ease'
+        transition: 'all 0.1s ease',
+        padding: '1em'
       }} 
       variant="contained" 
       color="primary" 
       style={buttonStyle} disableElevation
       onClick={handleClick}>
-      Login
+      Welcome back
     </Button>
   );
 }
 
-export default LoginButton;
+export default WelcomeButton;
