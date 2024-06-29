@@ -2,7 +2,7 @@ import React from "react";
 import Header from '../components/Header';
 import AddBonfire from "../components/AddBonfire";
 import Carousel from "../components/Carousel";
-import plank from "../images/plank.png"
+import Plank from "../components/Plank";
 
 function HomePage() {
 	return (
@@ -12,14 +12,31 @@ function HomePage() {
 				style={{
 					height: '100vh',
 					width: '100vw',
-					position: 'static',
 					display: 'flex',
 					alignItems: 'center',
-					justifyContent: 'center'
+					justifyContent: 'center',
+					flexDirection: 'column'
 				}}
 			>
-				<Carousel/>
-				{/* <img src={plank}></img> */}
+				<div
+					style={{
+						position: 'static',
+						display: 'flex',
+						alignItems: 'center',
+						justifyContent: 'center'
+					}}
+				>
+					<Carousel/>
+				</div>
+					<div
+						style={{
+							position: 'relative',
+							bottom: 0
+						}}
+					>
+
+						<Plank name='Bodacious baddies'/>
+					</div>
 			</div>
 			
 		</>

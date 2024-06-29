@@ -44,9 +44,9 @@ function Carousel() {
 				coverflowEffect={{
 					rotate: 0,
 					scale: 1,
-					stretch: -20,
+					stretch: -38,
 					depth: 150,
-					modifier: 3,
+					modifier: 4,
 					slideShadows: false
 				}}
 				navigation={{

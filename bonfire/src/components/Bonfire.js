@@ -10,13 +10,9 @@ export default function Bonfire (props) {
 			alignItems: 'center',
 			flexDirection: 'column'
 		}}>
-			<Typography variant="h4" sx={{
-				fontFamily: 'Gaegu',
-				color: 'white',
-				m: 2
-			}}>{props.name}</Typography>
 			<img src={fire}
 				style={{
+					minWidth: '500px',
 					width: '100%',
 					objectFit: 'cover'
 				}}
