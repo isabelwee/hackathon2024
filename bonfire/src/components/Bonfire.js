@@ -14,7 +14,8 @@ export default function Bonfire (props) {
 				style={{
 					minWidth: '400px',
 					width: '100%',
-					objectFit: 'cover'
+					objectFit: 'cover',
+					cursor: 'pointer'
 				}}
 				alt="bonfire image"
 			></img>

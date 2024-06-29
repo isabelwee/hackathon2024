@@ -58,10 +58,8 @@ function Carousel({handleNameChange}) {
 			<Swiper
 				effect='coverflow'
 				slidesPerView='3'
-				grabCursor='false'
+				grabCursor={false}
 				onSlideChange={handleSlideChange}
-				// loop='true'
-				// loopAddBlankSlides='true'
 				centerInsufficientSlides='true'
 				centeredSlides='true'
 				coverflowEffect={{
@@ -78,19 +76,19 @@ function Carousel({handleNameChange}) {
 				}}
 				modules={[EffectCoverflow, Navigation]}
 			>
-				<SwiperSlide onClick={handleBucketList}>
+				<SwiperSlide onClick={handleBucketList} >
 					<Bonfire name='god'></Bonfire>
 				</SwiperSlide>
-				<SwiperSlide>
+				<SwiperSlide onClick={handleBucketList} >
 					<Bonfire name='has'></Bonfire>
 				</SwiperSlide>
-				<SwiperSlide>
+				<SwiperSlide onClick={handleBucketList} >
 					<Bonfire name='said'></Bonfire>
 				</SwiperSlide>
-				<SwiperSlide>
+				<SwiperSlide onClick={handleBucketList} >
 					<Bonfire name='hoes mad'></Bonfire>
 				</SwiperSlide>
-				<SwiperSlide>
+				<SwiperSlide onClick={handleBucketList} >
 					<Bonfire name='ya yeet'></Bonfire>
 				</SwiperSlide>
 
