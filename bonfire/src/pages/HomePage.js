@@ -1,10 +1,13 @@
 import React from "react";
 import Header from '../components/Header';
+import Background from '../components/Background';
 
 function HomePage() {
     return (
-        <Header />
-        // <div>hOME eherhe</div>
+        <div>
+            <Background />
+            <Header />
+        </div>
     );
 }
 
