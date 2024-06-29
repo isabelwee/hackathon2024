@@ -1,9 +1,9 @@
 import React from "react";
 import Header from '../components/Header';
-import Background from '../components/Background';
 import AddBonfire from "../components/AddBonfire";
 import Carousel from "../components/Carousel";
-import Bonfire from "../components/Bonfire";
+import plank from "../images/plank.png"
+
 function HomePage() {
 	return (
 		<>
@@ -11,12 +11,15 @@ function HomePage() {
 			<div
 				style={{
 					height: '100vh',
+					width: '100vw',
 					position: 'static',
 					display: 'flex',
 					alignItems: 'center',
+					justifyContent: 'center'
 				}}
 			>
 				<Carousel/>
+				{/* <img src={plank}></img> */}
 			</div>
 			
 		</>

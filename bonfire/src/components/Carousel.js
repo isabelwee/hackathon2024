@@ -3,22 +3,43 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectCoverflow, Navigation } from 'swiper/modules';
 import 'swiper/css';
 import Bonfire from './Bonfire';
-import { Button, IconButton } from '@mui/material';
+import { IconButton } from '@mui/material';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 
 function Carousel() {
 
 
   return (
-		<>
-			<button className='left-button'>LEFT</button>
+		<div className='Carousel-container'
+			style={{
+				display: 'flex',
+				justifyContent: 'space-between',
+				alignItems: 'center'
+			}}
+		>
+			<div>
+				<IconButton className='left-button' sx={{
+					m: 2, ml: 5, color: 'white'
+				}}>
+					<ChevronLeftIcon sx={{ fontSize: '4em'}} />
+				</IconButton>
+			</div>
+			<div
+				style={{
+					display: 'flex',
+					justifyContent: 'center',
+					maxWidth: '70vw'
+				}}
+			>
+
 			<Swiper
 				effect='coverflow'
 				slidesPerView='3'
 				grabCursor='true'
-				loop='true'
-				loopAddBlankSlides='true'
-				// centerInsufficientSlides='true'
+				// loop='true'
+				// loopAddBlankSlides='true'
+				centerInsufficientSlides='true'
 				centeredSlides='true'
 				coverflowEffect={{
 					rotate: 0,
@@ -28,9 +49,6 @@ function Carousel() {
 					modifier: 3,
 					slideShadows: false
 				}}
-				style={{
-					width: '80%'
-				}}
 				navigation={{
 					nextEl: '.right-button',
 					prevEl: '.left-button'
@@ -38,27 +56,32 @@ function Carousel() {
 				modules={[EffectCoverflow, Navigation]}
 			>
 				<SwiperSlide>
-					<Bonfire></Bonfire>
+					<Bonfire name='god'></Bonfire>
 				</SwiperSlide>
 				<SwiperSlide>
-					<Bonfire></Bonfire>
+					<Bonfire name='has'></Bonfire>
 				</SwiperSlide>
 				<SwiperSlide>
-					<Bonfire></Bonfire>
+					<Bonfire name='said'></Bonfire>
 				</SwiperSlide>
 				<SwiperSlide>
-					<Bonfire></Bonfire>
+					<Bonfire name='hoes mad'></Bonfire>
 				</SwiperSlide>
 				<SwiperSlide>
-					<Bonfire></Bonfire>
+					<Bonfire name='ya yeet'></Bonfire>
 				</SwiperSlide>
 
 			</Swiper>
-			<IconButton className='right-button'
-			>
-				<ChevronRightIcon fontSize='large' sx={{ width: '100px'}}/>
+			</div>
+			
+			<div>
+			<IconButton className='right-button' sx={{
+				m: 2, mr: 5, color: 'white'
+			}}>
+  			<ChevronRightIcon sx={{ fontSize: '4em'}}/>
 			</IconButton>
-		</>
+			</div> 
+		</div> 
   );
 }
 
