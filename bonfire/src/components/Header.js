@@ -18,8 +18,7 @@ export default function Header() {
       }
 
       const handleHomeClick = () => {
-        /* change this!!! */
-        navigate('/')
+        navigate('/home')
       }
 
     return (
@@ -39,8 +38,9 @@ export default function Header() {
                 <Typography
                     variant="h2"
                     // to="/"
-                    sx={{ flexGrow: 1, textAlign: 'center', fontFamily: 'More Sugar', color: '#F1B150' }}
+                    sx={{ flexGrow: 1, textAlign: 'center', fontFamily: 'More Sugar', color: '#F1B150', cursor: 'pointer'}}
                     onClick={handleHomeClick}
+                    
                 >
                     bonfire
                 </Typography>
