@@ -8,6 +8,13 @@ import CreateBonfireModal from '../components/CreateBonfireModal'
 function HomePage() {
 	const [open, setOpen] = useState(false);
 	const [name, setName] = useState('');
+	const [bonfire, setBonfire] = useState([
+			'bodacious baddies',
+			'name2',
+			'name3',
+			'name4',
+			'name5',
+	])
 
 	const handleNameChange = (name) => {
 		setName(name);
@@ -18,6 +25,15 @@ function HomePage() {
 		console.log('open');
 	}
 	const handleClose = () => setOpen(false);
+
+	const handleCreateBonfire = () => {
+		setBonfire([...bonfire, 'placeholder name'])
+		// return bonfire
+	}
+
+	useEffect(() => {
+		console.log(bonfire);
+	}, [bonfire])
 
 	return (
 		<>
@@ -41,7 +57,7 @@ function HomePage() {
 						justifyContent: 'center'
 					}}
 				>
-					<Carousel handleNameChange={handleNameChange}/>
+					<Carousel handleNameChange={handleNameChange} bonfire={bonfire}/>
 				</div>
 					<div
 						style={{
@@ -52,8 +68,8 @@ function HomePage() {
 						<Plank name={name}/>
 					</div>
 			</div>
-			<AddBonfire onClick={handleOpen}></AddBonfire>
-			<CreateBonfireModal open={open} handleClose={handleClose}/>
+			<AddBonfire onClick={handleOpen} ></AddBonfire>
+			<CreateBonfireModal open={open} handleClose={handleClose} handleCreateBonfire={handleCreateBonfire}/>
 		</>
 	);
 }

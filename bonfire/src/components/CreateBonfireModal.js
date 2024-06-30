@@ -48,7 +48,7 @@ const promptStyle = {
 }
 
 
-export default function BucketListModal({ open, handleClose }) {
+export default function BucketListModal({ open, handleClose, handleCreateBonfire }) {
   const [number, setNumber] = React.useState('');
   const [numberFieldIsHovered, setNumberFieldIsHovered] = React.useState(false);
   const [textFieldIsHovered, setTextFieldIsHovered] = React.useState(false);
@@ -71,6 +71,10 @@ export default function BucketListModal({ open, handleClose }) {
     setSnackbarOpen(false);
   };
 
+  const handleCreate = () => {
+    handleClose();
+    handleCreateBonfire();
+  }
   const textFieldStyle = {
     borderRadius: '10px',
     transition: 'background-color 0.15s', // Smooth transition for border color change
@@ -119,8 +123,6 @@ export default function BucketListModal({ open, handleClose }) {
 
   return (
     <div>
-      {/* <AddBonfire onClick={handleOpen} /> */}
-      {/* <Button style={buttonStyle} onClick={handleOpen}>Replace with button icon</Button>  // replace this */}
       <Modal
         open={open}
         onClose={handleClose}
@@ -213,7 +215,7 @@ export default function BucketListModal({ open, handleClose }) {
             variant="contained"
             color="primary"
             style={doneButtonStyle}
-            onClick={handleClose}
+            onClick={handleCreate}
             disableElevation
             onMouseEnter={() => setDoneButtonIsHovered(true)} // Set hover state to true on mouse enter
             onMouseLeave={() => setDoneButtonIsHovered(false)}
