@@ -9,11 +9,11 @@ function HomePage() {
 	const [open, setOpen] = useState(false);
 	const [name, setName] = useState('');
 	const [bonfire, setBonfire] = useState([
-			'bodacious baddies',
-			'name2',
-			'name3',
-			'name4',
-			'name5',
+		'Mermaids',
+		'Work Friends',
+		'Uni mates',
+		'CSE subcom',
+		'Bing babies',
 	])
 
 	const handleNameChange = (name) => {
