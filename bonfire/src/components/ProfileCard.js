@@ -16,7 +16,8 @@ function ProfileCard() {
     width: '34vw',
     height: '54vh',
     textAlign: 'center',
-    padding: '1em'
+    paddingBottom: '50px',
+    padding: '1em',
 }
 
 const headerStyle = {
@@ -38,6 +39,14 @@ const padding = {
     marginBottom: '.4em'
 }
 
+const textInputProps = {
+    style: {
+      fontFamily: 'Gaegu',
+      fontSize: '20px',
+      color: '#394B6E',
+    },
+  };
+
 const handleClick = () => {
     /* change this!!! */
     navigate('/signup')
@@ -45,7 +54,7 @@ const handleClick = () => {
 
   return (
 
-    <Card style={cardStyle} sx={{ borderRadius: 4, padding: 2 }}>
+    <Card style={cardStyle} sx={{ borderRadius: 4, padding: 2, }}>
         <CardContent>
             <AccountCircleIcon 
             sx={{ fontSize: 160, color: '#394B6E', alignItems: 'center', marginTop: -.5 }} 
@@ -58,7 +67,8 @@ const handleClick = () => {
                     required
                     id="outlined-required"
                     size="small"
-                    defaultValue="bob"
+                    defaultValue="Eric"
+                    InputProps={textInputProps}
                     />
                 </div>
             </div>
@@ -70,7 +80,8 @@ const handleClick = () => {
                     required
                     id="outlined-required"
                     size="small"
-                    defaultValue="bob@mail.com"
+                    defaultValue="eric@gmail.com"
+                    InputProps={textInputProps}
                     />
                 </div>
             </div>
