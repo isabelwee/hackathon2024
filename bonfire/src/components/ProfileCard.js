@@ -16,7 +16,7 @@ function ProfileCard() {
     width: '34vw',
     height: '54vh',
     textAlign: 'center',
-    paddingBottom: '50px',
+    paddingBottom: '51px',
     padding: '1em',
 }
 
