@@ -13,10 +13,12 @@ function ProfileCard() {
 
   const cardStyle = {
     backgroundColor: '#FFF1E1',
+    minHeight: '500px',
     width: '34vw',
     height: '54vh',
     textAlign: 'center',
     paddingBottom: '51px',
+    marginTop: '50px',
     padding: '1em',
 }
 
