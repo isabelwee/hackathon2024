@@ -6,15 +6,14 @@ import paper from '../images/paper.png';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { Link } from 'react-router-dom';
 import BucketListModal from '../components/BucketListModal';
-import UploadPhotoModal from '../components/UploadImagesModal';  // Import the UploadPhotoModal
-import DeleteIcon from '@mui/icons-material/Delete'; // Import the Delete icon
+import UploadImagesModal from '../components/UploadImagesModal';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 function BucketList() {
   const [bucketListModalOpen, setBucketListModalOpen] = useState(false);
-  const [uploadPhotoModalOpen, setUploadPhotoModalOpen] = useState(false);  // State for the UploadPhotoModal
-  const [selectedItem, setSelectedItem] = useState(null); // State for the selected item
+  const [uploadPhotoModalOpen, setUploadPhotoModalOpen] = useState(false);
+  const [selectedItem, setSelectedItem] = useState(null); 
 
-  // Initialize state with data from localStorage, if available
   const [bucketListItems, setBucketListItems] = useState(() => {
     const savedItems = localStorage.getItem('bucketListItems');
     return savedItems ? JSON.parse(savedItems) : [
@@ -47,7 +46,7 @@ function BucketList() {
     
     if (event.target.checked) {
       setSelectedItem(newBucketListItems[index]);  // Set the selected item
-      handleUploadPhotoOpen();  // Open the UploadPhotoModal
+      handleUploadPhotoOpen();
     }
   };
 
@@ -56,16 +55,13 @@ function BucketList() {
     setBucketListItems(newBucketListItems);
   };
 
-  const handleClearAll = () => {
-    localStorage.removeItem('bucketListItems');
-    setBucketListItems([]);
-  };
+
 
   const bodyStyle = {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    height: '100vh',  // Full height of the viewport
+    height: '100vh',
     margin: 0,
   };
 
@@ -81,9 +77,9 @@ function BucketList() {
     boxSizing: 'border-box',
     textAlign: 'left',
     borderRadius: '8px',
-    width: '60vw',  // Adjust the width as needed
-    maxWidth: '90vw',  // Adjust the max width as needed
-    maxHeight: '80vh',  // Adjust the max height as needed
+    width: '60vw',
+    maxWidth: '90vw',
+    maxHeight: '80vh',
   };
 
   const typographyStyle = {
@@ -150,7 +146,7 @@ function BucketList() {
                   onChange={handleCheckboxChange(index)}
                 />
                 <Stack direction="column" spacing={0.5}>
-                  <Typography variant="h4" sx={typographyStyle}>{item.text}</Typography>
+                  <Typography variant="h4" sx={typographyStyle} onClick={handleUploadPhotoOpen}>{item.text}</Typography>
                   {item.date && (
                     <Typography variant="body1" sx={{ fontFamily: 'Gaegu', color: '#394B6E' }}>{item.date}</Typography>
                   )}
@@ -165,7 +161,7 @@ function BucketList() {
               </Stack>
             ))}
             <Stack direction="row" alignItems="center" spacing={1}>
-              <Typography variant="h4" sx={{...typographyStyle, cursor: 'pointer', '&:hover': {fontWeight: 'bold'}}} onClick={handleBucketListModalOpen}>+ Add new bucket list item!</Typography>
+              <Typography variant="h4" sx={typographyStyle} onClick={handleBucketListModalOpen}>+ Add new bucket list item!</Typography>
             </Stack>
           </Stack>
         </Stack>
@@ -175,10 +171,9 @@ function BucketList() {
         handleClose={handleBucketListModalClose} 
         handleAddItem={handleAddItem} 
       />
-      <UploadPhotoModal
-        open={uploadPhotoModalOpen}
-        handleClose={handleUploadPhotoClose}
-        selectedItem={selectedItem}  // Pass the selected item
+      <UploadImagesModal 
+        open={uploadPhotoModalOpen} 
+        handleClose={handleUploadPhotoClose} 
       />
     </div>
   );

@@ -17,7 +17,7 @@ const style = {
   height: 450,
   bgcolor: '#FFF1E1',
   color: '#394B6E',
-  border: '2px solid #000',
+  // border: '2px solid #000',
   padding: '33px',
   borderRadius: '25px',
 };
