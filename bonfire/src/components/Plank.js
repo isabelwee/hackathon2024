@@ -27,7 +27,7 @@ export default function Plank(props) {
         m: 2,
         position: 'absolute',
         top: '80px',
-      }}>X days until ACTIVITY</Typography>
+      }}>1 day until Beach Day</Typography>
     </div>
   )
 }
