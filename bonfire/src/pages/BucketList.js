@@ -133,7 +133,7 @@ function BucketList() {
               color: '#F1B150',
             }}
           >
-            Blah's Bucket List
+            Mermaids' Bucket List
           </Typography>
 
           <Stack spacing={2}>

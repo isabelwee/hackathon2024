@@ -144,7 +144,7 @@ function BucketMemories() {
             marginBottom: '2px'
           }}
         >
-          Blah's Bonfire Memories
+          Mermaids' Bonfire Memories
         </Typography>
 
         <ImageList sx={{ width: '100%', height: 'auto' }} cols={3} rowHeight="auto">
