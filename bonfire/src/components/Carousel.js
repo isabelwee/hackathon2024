@@ -12,11 +12,11 @@ import { useNavigate } from 'react-router-dom';
 function Carousel({handleNameChange}) {
 	const navigate = useNavigate();
 	const bonfires = [
-		'bodacious baddies',
-		'name2',
-		'name3',
-		'name4',
-		'name5',
+		'Mermaids',
+		'Work Friends',
+		'Uni mates',
+		'CSE subcom',
+		'Bing babies',
 	]
 	const [index, setIndex] = useState(0);
 
